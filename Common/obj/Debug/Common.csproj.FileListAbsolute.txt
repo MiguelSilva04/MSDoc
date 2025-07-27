@@ -1,0 +1,30 @@
+C:\C#\1esboço\Common\bin\Debug\Common.dll
+C:\C#\1esboço\Common\bin\Debug\Common.pdb
+C:\C#\1esboço\Common\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\C#\1esboço\Common\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\C#\1esboço\Common\bin\Debug\Microsoft.Analytics.Types.dll
+C:\C#\1esboço\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\C#\1esboço\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\C#\1esboço\Common\obj\Debug\Common.dll
+C:\C#\1esboço\Common\obj\Debug\Common.pdb
+C:\C#\1esboço\Common\obj\Debug\Common.csproj.CopyComplete
+C:\C#\1esboço - Copy\Common\bin\Debug\Common.dll
+C:\C#\1esboço - Copy\Common\bin\Debug\Common.pdb
+C:\C#\1esboço - Copy\Common\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\C#\1esboço - Copy\Common\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\C#\1esboço - Copy\Common\bin\Debug\Microsoft.Analytics.Types.dll
+C:\C#\1esboço - Copy\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\C#\1esboço - Copy\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\C#\1esboço - Copy\Common\obj\Debug\Common.csproj.CopyComplete
+C:\C#\1esboço - Copy\Common\obj\Debug\Common.dll
+C:\C#\1esboço - Copy\Common\obj\Debug\Common.pdb
+C:\C#\PAP\Common\bin\Debug\Common.dll
+C:\C#\PAP\Common\bin\Debug\Common.pdb
+C:\C#\PAP\Common\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\C#\PAP\Common\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\C#\PAP\Common\bin\Debug\Microsoft.Analytics.Types.dll
+C:\C#\PAP\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\C#\PAP\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\C#\PAP\Common\obj\Debug\Common.csproj.CopyComplete
+C:\C#\PAP\Common\obj\Debug\Common.dll
+C:\C#\PAP\Common\obj\Debug\Common.pdb

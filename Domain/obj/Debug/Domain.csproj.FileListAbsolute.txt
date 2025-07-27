@@ -1,0 +1,48 @@
+C:\C#\1esboço\Domain\bin\Debug\Domain.dll
+C:\C#\1esboço\Domain\bin\Debug\Domain.pdb
+C:\C#\1esboço\Domain\bin\Debug\DataAccess.dll
+C:\C#\1esboço\Domain\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\C#\1esboço\Domain\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\C#\1esboço\Domain\bin\Debug\Microsoft.Analytics.Types.dll
+C:\C#\1esboço\Domain\bin\Debug\DataAccess.pdb
+C:\C#\1esboço\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\C#\1esboço\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\C#\1esboço\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\C#\1esboço\Domain\obj\Debug\Domain.dll
+C:\C#\1esboço\Domain\obj\Debug\Domain.pdb
+C:\C#\1esboço\Domain\bin\Debug\Common.dll
+C:\C#\1esboço\Domain\bin\Debug\Common.pdb
+C:\C#\1esboço\Domain\bin\Debug\Domain.dll.config
+C:\C#\1esboço\Domain\bin\Debug\DataAccess.dll.config
+C:\C#\1esboço - Copy\Domain\bin\Debug\Domain.dll.config
+C:\C#\1esboço - Copy\Domain\bin\Debug\Domain.dll
+C:\C#\1esboço - Copy\Domain\bin\Debug\Domain.pdb
+C:\C#\1esboço - Copy\Domain\bin\Debug\Common.dll
+C:\C#\1esboço - Copy\Domain\bin\Debug\DataAccess.dll
+C:\C#\1esboço - Copy\Domain\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\C#\1esboço - Copy\Domain\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\C#\1esboço - Copy\Domain\bin\Debug\Microsoft.Analytics.Types.dll
+C:\C#\1esboço - Copy\Domain\bin\Debug\Common.pdb
+C:\C#\1esboço - Copy\Domain\bin\Debug\DataAccess.pdb
+C:\C#\1esboço - Copy\Domain\bin\Debug\DataAccess.dll.config
+C:\C#\1esboço - Copy\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\C#\1esboço - Copy\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\C#\1esboço - Copy\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\C#\1esboço - Copy\Domain\obj\Debug\Domain.dll
+C:\C#\1esboço - Copy\Domain\obj\Debug\Domain.pdb
+C:\C#\PAP\Domain\bin\Debug\Domain.dll.config
+C:\C#\PAP\Domain\bin\Debug\Domain.dll
+C:\C#\PAP\Domain\bin\Debug\Domain.pdb
+C:\C#\PAP\Domain\bin\Debug\Common.dll
+C:\C#\PAP\Domain\bin\Debug\DataAccess.dll
+C:\C#\PAP\Domain\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\C#\PAP\Domain\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\C#\PAP\Domain\bin\Debug\Microsoft.Analytics.Types.dll
+C:\C#\PAP\Domain\bin\Debug\Common.pdb
+C:\C#\PAP\Domain\bin\Debug\DataAccess.pdb
+C:\C#\PAP\Domain\bin\Debug\DataAccess.dll.config
+C:\C#\PAP\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\C#\PAP\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\C#\PAP\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\C#\PAP\Domain\obj\Debug\Domain.dll
+C:\C#\PAP\Domain\obj\Debug\Domain.pdb
