@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MSDOCSCHOOL" Class="dbmainDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=MSDOCSCHOOL;Integrated Security=True" SettingsObjectName="MSDOC.Properties.Settings" SettingsPropertyName="MSDOCSCHOOLConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Alunos" Member="Alunos">
+    <Type Name="Aluno">
+      <Column Name="AlunoId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DataNascimento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Genero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Morada" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Imagem" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Aluno_AlunosAssiduidade" Member="AlunosAssiduidades" ThisKey="AlunoId" OtherKey="AlunoId" Type="AlunosAssiduidade" />
+      <Association Name="Aluno_AlunosTurma" Member="AlunosTurmas" ThisKey="AlunoId" OtherKey="AlunoId" Type="AlunosTurma" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AlunosAssiduidade" Member="AlunosAssiduidades">
+    <Type Name="AlunosAssiduidade">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AlunoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AlunoNome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Data" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DataInicial" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DataFinal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Turma" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TurmaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Aluno_AlunosAssiduidade" Member="Aluno" ThisKey="AlunoId" OtherKey="AlunoId" Type="Aluno" IsForeignKey="true" />
+      <Association Name="Turma_AlunosAssiduidade" Member="Turma1" ThisKey="TurmaId" OtherKey="TurmaId" Type="Turma" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AlunosTurmas" Member="AlunosTurmas">
+    <Type Name="AlunosTurma">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AlunoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AlunoNome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TurmaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TurmaNome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CursoNome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Aluno_AlunosTurma" Member="Aluno" ThisKey="AlunoId" OtherKey="AlunoId" Type="Aluno" IsForeignKey="true" DeleteRule="SET DEFAULT" />
+      <Association Name="Curso_AlunosTurma" Member="Curso" ThisKey="CursoId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" DeleteRule="SET DEFAULT" />
+      <Association Name="Turma_AlunosTurma" Member="Turma" ThisKey="TurmaId" OtherKey="TurmaId" Type="Turma" IsForeignKey="true" DeleteRule="SET DEFAULT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cursos" Member="Cursos">
+    <Type Name="Curso">
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CursoNome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoCurso" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Curso_AlunosTurma" Member="AlunosTurmas" ThisKey="CursoId" OtherKey="CursoId" Type="AlunosTurma" />
+      <Association Name="Curso_ProfessorTurma" Member="ProfessorTurmas" ThisKey="CursoId" OtherKey="CursoId" Type="ProfessorTurma" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProfessorAssiduidade" Member="ProfessorAssiduidades">
+    <Type Name="ProfessorAssiduidade">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfessorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProfessorNome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Data" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DataInicial" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DataFinal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Professore_ProfessorAssiduidade" Member="Professore" ThisKey="ProfessorId" OtherKey="ProfessorId" Type="Professore" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Professores" Member="Professores">
+    <Type Name="Professore">
+      <Column Name="ProfessorId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DataNascimento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Genero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Morada" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Imagem" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Professore_ProfessorAssiduidade" Member="ProfessorAssiduidades" ThisKey="ProfessorId" OtherKey="ProfessorId" Type="ProfessorAssiduidade" />
+      <Association Name="Professore_ProfessorTurma" Member="ProfessorTurmas" ThisKey="ProfessorId" OtherKey="ProfessorId" Type="ProfessorTurma" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Turmas" Member="Turmas">
+    <Type Name="Turma">
+      <Column Name="TurmaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TurmaNome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CursoNome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Turma_AlunosAssiduidade" Member="AlunosAssiduidades" ThisKey="TurmaId" OtherKey="TurmaId" Type="AlunosAssiduidade" />
+      <Association Name="Turma_AlunosTurma" Member="AlunosTurmas" ThisKey="TurmaId" OtherKey="TurmaId" Type="AlunosTurma" />
+      <Association Name="Turma_ProfessorTurma" Member="ProfessorTurmas" ThisKey="TurmaId" OtherKey="TurmaId" Type="ProfessorTurma" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Posicao" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Imagem" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ficheiros" Member="Ficheiros">
+    <Type Name="Ficheiro">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Professor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Data" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Turma" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ficheiro" Member="Ficheiro1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProfessorTurmas" Member="ProfessorTurmas">
+    <Type Name="ProfessorTurma">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfessorId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProfessorNome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CursoNome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TurmaId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TurmaNome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Curso_ProfessorTurma" Member="Curso" ThisKey="CursoId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" />
+      <Association Name="Professore_ProfessorTurma" Member="Professore" ThisKey="ProfessorId" OtherKey="ProfessorId" Type="Professore" IsForeignKey="true" />
+      <Association Name="Turma_ProfessorTurma" Member="Turma" ThisKey="TurmaId" OtherKey="TurmaId" Type="Turma" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.adicionarUtilizadores" Method="adicionarUtilizadores">
+    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Posicao" Parameter="posicao" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Imagem" Parameter="imagem" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarAlunosNomeAssiduidade" Method="atualizarAlunosNomeAssiduidade">
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="alunoID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarAlunosNomeTurma" Method="atualizarAlunosNomeTurma">
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="alunoID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarAssiduidadeAlunos" Method="atualizarAssiduidadeAlunos">
+    <Parameter Name="AlunoId" Parameter="alunoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AlunoNome" Parameter="alunoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Data" Parameter="data" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DataInicial" Parameter="dataInicial" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DataFinal" Parameter="dataFinal" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarAssiduidadeProfessores" Method="atualizarAssiduidadeProfessores">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProfessorNome" Parameter="professorNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Data" Parameter="data" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DataInicial" Parameter="dataInicial" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DataFinal" Parameter="dataFinal" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarCursoAluno" Method="atualizarCursoAluno">
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarCursos" Method="atualizarCursos">
+    <Parameter Name="TipoCurso" Parameter="tipoCurso" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarProfessores" Method="atualizarProfessores">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DataNascimento" Parameter="dataNascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefone" Parameter="telefone" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Morada" Parameter="morada" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Imagem" Parameter="imagem" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarProfessoresNomeAssiduidade" Method="atualizarProfessoresNomeAssiduidade">
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProfessorID" Parameter="professorID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarProfessoresNomeTurmas" Method="atualizarProfessoresNomeTurmas">
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProfessorID" Parameter="professorID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarTurmasAlunos" Method="atualizarTurmasAlunos">
+    <Parameter Name="AlunoId" Parameter="alunoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AlunoNome" Parameter="alunoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarTurmasProfessores" Method="atualizarTurmasProfessores">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProfessorNome" Parameter="professorNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarTurmas" Method="atualizarTurmas">
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarTurmaAluno" Method="atualizarTurmaAluno">
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarTurmaProfessor" Method="atualizarTurmaProfessor">
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarAssiduidadeAluno" Method="atualizarAssiduidadeAluno">
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarProfessores" Method="adicionarProfessores">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DataNascimento" Parameter="dataNascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefone" Parameter="telefone" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Morada" Parameter="morada" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Imagem" Parameter="imagem" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarCursos" Method="adicionarCursos">
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TipoCurso" Parameter="tipoCurso" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarTurmas" Method="adicionarTurmas">
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarTurmasAlunos" Method="adicionarTurmasAlunos">
+    <Parameter Name="AlunoId" Parameter="alunoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AlunoNome" Parameter="alunoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarProfessorAssiduidade" Method="adicionarProfessorAssiduidade">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProfessorNome" Parameter="professorNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Data" Parameter="data" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DataInicial" Parameter="dataInicial" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DataFinal" Parameter="dataFinal" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarAlunosAssiduidade" Method="adicionarAlunosAssiduidade">
+    <Parameter Name="AlunoId" Parameter="alunoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AlunoNome" Parameter="alunoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Data" Parameter="data" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DataInicial" Parameter="dataInicial" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DataFinal" Parameter="dataFinal" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Turma" Parameter="turma" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarFicheiros" Method="eliminarFicheiros">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarAlunos" Method="eliminarAlunos">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarCursos" Method="eliminarCursos">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarTurmas" Method="eliminarTurmas">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarUsers" Method="eliminarUsers">
+    <Parameter Name="Id" Parameter="id" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarProfessores" Method="eliminarProfessores">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarProfessorTurmas" Method="eliminarProfessorTurmas">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarFicheiros" Method="atualizarFicheiros">
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Data" Parameter="data" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Turma" Parameter="turma" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Ficheiro" Parameter="ficheiro" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarProfessorAssiduidade" Method="eliminarProfessorAssiduidade">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarAssiduidadeAlunos" Method="eliminarAssiduidadeAlunos">
+    <Parameter Name="AlunoId" Parameter="alunoId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarAlunos" Method="adicionarAlunos">
+    <Parameter Name="alunoID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DataNascimento" Parameter="dataNascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefone" Parameter="telefone" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Morada" Parameter="morada" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Imagem" Parameter="imagem" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="EncarregadoEducacao" Parameter="encarregadoEducacao" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarAlunos" Method="atualizarAlunos">
+    <Parameter Name="alunoID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DataNascimento" Parameter="dataNascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Genero" Parameter="genero" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefone" Parameter="telefone" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Morada" Parameter="morada" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Imagem" Parameter="imagem" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="EncarregadoEducacao" Parameter="encarregadoEducacao" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarAlunosTurmas" Method="eliminarAlunosTurmas">
+    <Parameter Name="AlunoId" Parameter="alunoId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarProfessorTurmasId" Method="eliminarProfessorTurmasId">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarProfessorAssiduidadeId" Method="eliminarProfessorAssiduidadeId">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarAssiduidadeAlunosId" Method="eliminarAssiduidadeAlunosId">
+    <Parameter Name="AlunoId" Parameter="alunoId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarAlunosTurmasId" Method="eliminarAlunosTurmasId">
+    <Parameter Name="AlunoId" Parameter="alunoId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarTurmasProfessores" Method="adicionarTurmasProfessores">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProfessorNome" Parameter="professorNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CursoNome" Parameter="cursoNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaId" Parameter="turmaId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TurmaNome" Parameter="turmaNome" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adicionarFicheiros" Method="adicionarFicheiros">
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ProfessorNome" Parameter="professorNome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Data" Parameter="data" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Turma" Parameter="turma" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Ficheiro" Parameter="ficheiro" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.eliminarFicheirosProfessores" Method="eliminarFicheirosProfessores">
+    <Parameter Name="ProfessorId" Parameter="professorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarUtilizador" Method="atualizarUtilizador">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Imagem" Parameter="imagem" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="utilizadorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarUtilizadorPassword" Method="atualizarUtilizadorPassword">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Imagem" Parameter="imagem" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="utilizadorId" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.atualizarPasswordsUtilizador" Method="atualizarPasswordsUtilizador">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

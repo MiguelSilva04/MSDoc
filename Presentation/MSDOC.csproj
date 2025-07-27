@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44F996C9-1FAF-4376-B7F0-565B056C4336}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MSDOC</RootNamespace>
+    <AssemblyName>MSDOC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>adswdasw.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassesTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassesTeacher.designer.cs">
+      <DependentUpon>ClassesTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetAlunosImprimir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosImprimir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetFicheiros.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetFicheiros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile.designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordAdmin.Designer.cs">
+      <DependentUpon>ChangePasswordAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\files.cs" />
+    <Compile Include="Ficheiros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ficheiros.designer.cs">
+      <DependentUpon>Ficheiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\attStudents.cs" />
+    <Compile Include="classes\attTeacher.cs" />
+    <Compile Include="classes\Classes.cs" />
+    <Compile Include="classes\courses.cs" />
+    <Compile Include="classes\coursesStudent.cs" />
+    <Compile Include="classes\coursesTeacher.cs" />
+    <Compile Include="classes\MainClass.cs" />
+    <Compile Include="AttendanceTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceTeacher.designer.cs">
+      <DependentUpon>AttendanceTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceStudents.designer.cs">
+      <DependentUpon>AttendanceStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbmain.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbmain.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DGVPrinter.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTeachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageTeachers.designer.cs">
+      <DependentUpon>ManageTeachers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageStudent.designer.cs">
+      <DependentUpon>ManageStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassesStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassesStudents.designer.cs">
+      <DependentUpon>ClassesStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageClass.designer.cs">
+      <DependentUpon>ManageClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCourse.designer.cs">
+      <DependentUpon>ManageCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetAlunoNovo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetAlunoNovo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetAlunosAssiduidade.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosAssiduidade.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetAlunosGerir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosGerir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetAlunosTurmas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosTurmas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetCursoNovo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetCursoNovo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetCursosGerir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetCursosGerir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetEmail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetEmail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetProfessoresAssiduidade.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresAssiduidade.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetProfessoresGerir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresGerir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetProfessoresImprimir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresImprimir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetProfessoresTurmas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresTurmas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetProfessorNovo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetProfessorNovo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetTurmaNova.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetTurmaNova.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetTurmasGerir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetTurmasGerir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MSDOCSCHOOLDataSetUsers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MSDOCSCHOOLDataSetUsers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCourse.designer.cs">
+      <DependentUpon>NewCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewClass.designer.cs">
+      <DependentUpon>NewClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAdminUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAdminUser.designer.cs">
+      <DependentUpon>AddAdminUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTeacher.designer.cs">
+      <DependentUpon>NewTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintTeacher.designer.cs">
+      <DependentUpon>PrintTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintStudent.designer.cs">
+      <DependentUpon>PrintStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NewStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewStudent.designer.cs">
+      <DependentUpon>NewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeScreen.designer.cs">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm.designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Student.cs" />
+    <Compile Include="classes\Teacher.cs" />
+    <EmbeddedResource Include="ClassesTeacher.resx">
+      <DependentUpon>ClassesTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceTeacher.resx">
+      <DependentUpon>AttendanceTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceStudents.resx">
+      <DependentUpon>AttendanceStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordAdmin.resx">
+      <DependentUpon>ChangePasswordAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ficheiros.resx">
+      <DependentUpon>Ficheiros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassesStudents.resx">
+      <DependentUpon>ClassesStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageTeachers.resx">
+      <DependentUpon>ManageTeachers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageClass.resx">
+      <DependentUpon>ManageClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCourse.resx">
+      <DependentUpon>ManageCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCourse.resx">
+      <DependentUpon>NewCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewClass.resx">
+      <DependentUpon>NewClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAdminUser.resx">
+      <DependentUpon>AddAdminUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTeacher.resx">
+      <DependentUpon>NewTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintTeacher.resx">
+      <DependentUpon>PrintTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageStudent.resx">
+      <DependentUpon>ManageStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintStudent.resx">
+      <DependentUpon>PrintStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="NewStudent.resx">
+      <DependentUpon>NewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="dbmain.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbmain.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbmain.dbml.layout">
+      <DependentUpon>dbmain.dbml</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunoNovo.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunoNovo.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunoNovo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetAlunoNovo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunoNovo.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunoNovo.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosAssiduidade.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosAssiduidade.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosAssiduidade.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetAlunosAssiduidade.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosAssiduidade.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosAssiduidade.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosGerir.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosGerir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosGerir.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetAlunosGerir.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosGerir.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosGerir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosImprimir.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosImprimir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosImprimir.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetAlunosImprimir.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosImprimir.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosImprimir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosTurmas.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosTurmas.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosTurmas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetAlunosTurmas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetAlunosTurmas.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetAlunosTurmas.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetCursoNovo.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetCursoNovo.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetCursoNovo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetCursoNovo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetCursoNovo.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetCursoNovo.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetCursosGerir.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetCursosGerir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetCursosGerir.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetCursosGerir.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetCursosGerir.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetCursosGerir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetEmail.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetEmail.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetEmail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetEmail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetEmail.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetEmail.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetFicheiros.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetFicheiros.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetFicheiros.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetFicheiros.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetFicheiros.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetFicheiros.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresAssiduidade.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresAssiduidade.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresAssiduidade.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetProfessoresAssiduidade.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresAssiduidade.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresAssiduidade.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresGerir.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresGerir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresGerir.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetProfessoresGerir.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresGerir.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresGerir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresImprimir.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresImprimir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresImprimir.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetProfessoresImprimir.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresImprimir.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresImprimir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresTurmas.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresTurmas.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresTurmas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetProfessoresTurmas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessoresTurmas.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessoresTurmas.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessorNovo.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessorNovo.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessorNovo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetProfessorNovo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetProfessorNovo.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetProfessorNovo.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetTurmaNova.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetTurmaNova.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetTurmaNova.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetTurmaNova.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetTurmaNova.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetTurmaNova.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetTurmasGerir.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetTurmasGerir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetTurmasGerir.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetTurmasGerir.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetTurmasGerir.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetTurmasGerir.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetUsers.xsc">
+      <DependentUpon>MSDOCSCHOOLDataSetUsers.xsd</DependentUpon>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetUsers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MSDOCSCHOOLDataSetUsers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MSDOCSCHOOLDataSetUsers.xss">
+      <DependentUpon>MSDOCSCHOOLDataSetUsers.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c4881d2b-a49d-43ca-a510-96e7f1608eeb}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{c3508b6b-aa75-4d30-a7e9-33660deed816}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun-eye-closed-4434873.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noun-eye-1010905.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-closed-eye-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar-graph1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2022-01-23 105626.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroom_50coverpx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-mark-3-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-mark-3-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-mark-3-5122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-window-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-user-profile-computer-icons-user-interface-mystique-5aceb0245aa097.2885333015234949483712.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-user-profile-computer-icons-user-interface-mystique-5aceb0245aa097.2885333015234949483712-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cover3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroom_50whitepx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroomblue_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroom_50whitepx1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cover31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cover311.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finalLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adswdasw.ico" />
+    <None Include="Resources\x-mark-4-256.png" />
+    <None Include="Resources\refresh-2-24.png" />
+    <None Include="Resources\sinchronize-24.png" />
+    <None Include="Resources\finalLogo1.png" />
+    <None Include="Resources\adswdasw.png" />
+    <None Include="Resources\arrow-87-256 %281%29.png" />
+    <None Include="Resources\arrow-87-256.png" />
+    <None Include="Resources\png-transparent-computer-icons-password-strength-padlock-text-technic-symbol-transformed1.png" />
+    <None Include="Resources\png-transparent-computer-icons-password-strength-padlock-text-technic-symbol-transformed.png" />
+    <None Include="Resources\png-transparent-computer-icons-password-strength-padlock-text-technic-symbol.png" />
+    <None Include="Resources\1000948.ico" />
+    <None Include="Resources\360_F_465915770_HsbKRqP7PQnoGnNn5dyYRlODYZQI9PNu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
